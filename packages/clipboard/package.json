@@ -1,0 +1,23 @@
+{
+  "name": "@fairytek/react-clipboard",
+  "version": "0.0.1-alpha.1",
+  "author": {
+    "email": "truonghungit@gmail.com",
+    "name": "Hung Pham"
+  },
+  "keywords": [
+    "@fairytek/react-clipboard",
+    "fairytek",
+    "clipboard",
+    "react-clipboard",
+    "copy clipboard",
+    "copy to clipboard",
+    "react copy to clipboard",
+    "react clipboard hook"
+  ],
+  "homepage": "https://github.com/fairytek/prettier-config#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
