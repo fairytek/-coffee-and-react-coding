@@ -15,7 +15,7 @@
     "react copy to clipboard",
     "react clipboard hook"
   ],
-  "homepage": "https://github.com/fairytek/prettier-config#readme",
+  "homepage": "https://github.com/fairytek/coffee-and-react-coding/tree/master/packages/clipboard#readme",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
