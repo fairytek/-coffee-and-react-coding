@@ -1,5 +1,6 @@
-# react-clipboard
-Lightweight copy to clipboard for the React. 
+# React copy to clipboard
+
+Lightweight library copy to clipboard for the React.
 
 ## Install
 
@@ -17,50 +18,47 @@ yarn add @fairytek/react-clipboard
 
 `useCopyToClipboard` hook
 
-
 ```jsx
-import React from 'react'
+import React from 'react';
 
-import { useCopyToClipboard } from '@fairytek/react-clipboard'
+import { useCopyToClipboard } from '@fairytek/react-clipboard';
 
 export default function Component() {
-  const [copy, copiedValue] = useCopyToClipboard();
-  
+  const [copy, isCopied, copiedText] = useCopyToClipboard();
+
   return (
     <>
       <h1>Click to copy:</h1>
-      <div style={{ display: 'flex' }}>
-        <button onClick={() => copy('Pellentesque in ipsum id orci porta dapibus.')}>A</button>
-        <button onClick={() => copy('Quisque velit nisi, pretium ut lacinia in, elementum id enim.')}>B</button>
+      <div>
+        <button type="button" onClick={() => copy('Hello world')}>
+          {isCopied ? 'Copied' : 'Copy text'}
+        </button>
       </div>
-      <p>Copied value: {value ?? 'Nothing is copied yet!'}</p>
+      <p>Copied value: {copiedText ?? 'Nothing is copied yet!'}</p>
     </>
-  )
+  );
 }
-
 ```
 
 `useCopyToClipboardButton` hook
 
-
 ```jsx
-import React from 'react'
+import React from 'react';
 
-import { useCopyToClipboardButton } from '@fairytek/react-clipboard'
+import { useCopyToClipboardButton } from '@fairytek/react-clipboard';
 
 export default function Component() {
-  const [buttonProps, { isCopied, copiedText }] = useCopyToClipboardButton({text: 'Pellentesque in ipsum id orci porta dapibus.'});
-  
+  const [buttonProps, { isCopied, copiedText }] =
+    useCopyToClipboardButton('Hello');
+
   return (
     <>
       <h1>Click to copy:</h1>
       <div style={{ display: 'flex' }}>
-        <button {...buttonProps}>
-        { isCopied ? 'Copied' : 'Copy' }</button>
+        <button {...buttonProps}>{isCopied ? 'Copied' : 'Copy'}</button>
       </div>
       <p>Copied value: {copiedText ?? 'Nothing is copied yet!'}</p>
     </>
-  )
+  );
 }
-
 ```

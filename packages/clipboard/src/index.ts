@@ -1,3 +1,3 @@
-export * from './lib/clipboard';
-export * from './lib/useCopyToClipboard';
-export * from './lib/useCopyToClipboardButton';
+export * from './lib/components/copy-button';
+export * from './lib/hooks/use-copy-to-clipboard';
+export * from './lib/hooks/use-copy-to-clipboard-button';

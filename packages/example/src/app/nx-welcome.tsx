@@ -11,18 +11,9 @@ import {
   useCopyToClipboardButton,
 } from '@fairytek/react-clipboard';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export function NxWelcome({ title }: { title: string }) {
-  const [valueTopCopy, setValueToCopy] = useState('Hello');
-  const [copy, copiedText] = useCopyToClipboard();
-  const [copyButtonProps, { isCopied }] = useCopyToClipboardButton({
-    text: valueTopCopy,
-  });
-
-  setTimeout(() => {
-    setValueToCopy('Updated value');
-  }, 5000);
-
   return (
     <>
       <style
@@ -439,10 +430,6 @@ export function NxWelcome({ title }: { title: string }) {
             </h1>
           </div>
 
-          <div>Tooltip: {isCopied ? 'Copied!' : 'Copy'}</div>
-          <button {...copyButtonProps}> {isCopied ? 'Copied!' : 'Copy'}</button>
-          <button onClick={() => copy(title)}> Copy </button>
-
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>
@@ -478,8 +465,8 @@ export function NxWelcome({ title }: { title: string }) {
           <div id="middle-content">
             <div id="learning-materials" className="rounded shadow">
               <h2>Learning materials</h2>
-              <a
-                href="https://nx.dev/getting-started/intro?utm_source=nx-project"
+              <Link
+                to="/clipboard"
                 target="_blank"
                 rel="noreferrer"
                 className="list-item-link"
@@ -498,7 +485,7 @@ export function NxWelcome({ title }: { title: string }) {
                   />
                 </svg>
                 <span>
-                  Documentation
+                  Clipboard
                   <span> Everything is in there </span>
                 </span>
                 <svg
@@ -514,7 +501,7 @@ export function NxWelcome({ title }: { title: string }) {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </a>
+              </Link>
               <a
                 href="https://blog.nrwl.io/?utm_source=nx-project"
                 target="_blank"
